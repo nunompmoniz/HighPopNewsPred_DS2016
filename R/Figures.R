@@ -4,12 +4,8 @@
 setwd("") #MUST SET WORKING DIRECTORY
 
 #Data
-twitterdata <- read.csv("NewData/TwitterData.csv")
-twitterdata$RefDate <- as.POSIXct(twitterdata$RefDate)
 links <- read.csv("NewData/Links.csv")
 links$PublishDate <- as.POSIXct(links$PublishDate)
-googleranks <- read.csv("NewData/GoogleData.csv")
-googleranks$RefDate <- as.POSIXct(googleranks$RefDate)
 analysis <- read.csv("NewData/Analysis.csv")
 
 #IMAGES

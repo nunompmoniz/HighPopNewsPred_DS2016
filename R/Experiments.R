@@ -4,12 +4,8 @@
 setwd("") #MUST SET WORKING DIRECTORY
 
 #Data
-twitterdata <- read.csv("NewData/TwitterData.csv")
-twitterdata$RefDate <- as.POSIXct(twitterdata$RefDate)
 links <- read.csv("NewData/Links.csv")
 links$PublishDate <- as.POSIXct(links$PublishDate)
-googleranks <- read.csv("NewData/GoogleData.csv")
-googleranks$RefDate <- as.POSIXct(googleranks$RefDate)
 analysis <- read.csv("NewData/Analysis.csv")
 
 ranktable <- read.csv("NewData/RankTable.csv")
@@ -18,9 +14,7 @@ ranktable.microsoft <- read.csv("NewData/RankTable_Microsoft.csv")
 ranktable.obama <- read.csv("NewData/RankTable_Obama.csv")
 ranktable.palestine <- read.csv("NewData/RankTable_Palestine.csv")
 
-twitterdata$X <- NULL
 links$X <- NULL
-googleranks$X <- NULL
 analysis$X <- NULL
 
 analysis.economy <- analysis[analysis$IDLink %in% links[links$Topic=="economy",]$IDLink,]
