@@ -1,11 +1,6 @@
 library(ggplot2)
 library(lsr)
 
-# Function that returns Mean Absolute Error
-mae <- function(error) {
-  mean(abs(error))
-}
-
 mse <- function(error) {
   mean((error)^2, na.rm = TRUE)
 }
@@ -25,8 +20,6 @@ table <- data.frame(trues=c(trues,trues),value=c(m2,m1),model=c(m2_name,m1_name)
 table$model <- factor(table$model)
 misleadingscenario <- ggplot(table,aes(x=trues,y=value,shape=model,color=model)) + geom_point(size=4) + ylim(0,8) + xlim(0,8) + geom_abline(h=0) + xlab("y") + ylab(expression(hat(y))) + geom_vline(xintercept=5,linetype="longdash") + geom_hline(yintercept=5,linetype="longdash")
 
-mae(error_m1)
-mae(error_m2)
 aad(error_m1)
 aad(error_m2)
 mse(error_m1)
